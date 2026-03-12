@@ -1,0 +1,97 @@
+@import "./nav/nav.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Styles personnalisés peuvent être ajoutés ici */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+
+
+
+@layer base {
+  body {
+    @apply font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-colors;
+  }
+
+  .font-cormorant {
+    font-family: 'Cormorant', serif;
+  }
+  
+  .font-forum {
+    font-family: 'Forum', cursive;
+  }
+  
+  .font-windsong {
+    font-family: 'WindSong', cursive;
+  }
+  
+  .font-bodoni {
+    font-family: "Bodoni Moda", serif;
+  }
+
+  .grid-main {
+    @apply grid grid-cols-12 gap-4;
+  }
+  
+  .btn-primary {
+    @apply bg-main text-background text-2xl font-cormorant border border-main px-6 py-2 hover:bg-background hover:text-main transition-all duration-300 w-fit;
+  }
+  
+  .btn-secondary {
+    @apply bg-background text-main text-2xl font-cormorant border border-background px-6 py-2 hover:bg-transparent hover:text-background transition-all duration-300 w-fit;
+  }
+
+  .text-content {
+    @apply text-main text-lg sm:text-xl md:text-2xl font-cormorant;
+    p {
+      @apply mb-4 sm:mb-6;
+    }
+  }
+
+  .content-container {
+    @apply col-span-12 sm:col-start-2 sm:col-end-12 md:col-start-3 md:col-end-11;
+  }
+
+  .gallery-container {
+    @apply col-span-12 sm:col-start-2 sm:col-end-12 md:col-start-3 md:col-end-11;
+  }
+
+  .gallery-image {
+    @apply w-full sm:w-1/2 md:w-1/3;
+  }
+
+  section {
+    padding-top: 100px;
+  }
+
+  .small_title {
+    @apply text-main text-4.5xl font-forum uppercase;
+    .highlight {
+      @apply text-5.5xl;
+    }
+  }
+
+  .title {
+  @apply text-main text-4.5xl font-forum uppercase text-center relative
+    flex items-center justify-center gap-4;
+
+  &::before,
+  &::after {
+    @apply content-[''] block w-24 h-px bg-main;
+  }
+
+  .highlight {
+    @apply text-5.5xl;
+  }
+}
+}

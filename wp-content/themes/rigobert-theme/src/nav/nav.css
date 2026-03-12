@@ -1,0 +1,15 @@
+.main-menu {
+    @apply py-7;
+    ul{
+        @apply flex justify-between items-center uppercase font-cormorant text-xl;
+
+        .logo-link{
+            @apply bg-[url("../img/logo-wood.svg")] bg-contain bg-no-repeat w-20 h-20 text-transparent;
+        }
+    }
+}
+.footer-nav {
+    .logo-link{
+        @apply hidden
+    }
+}

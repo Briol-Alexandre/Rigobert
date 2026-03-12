@@ -1,0 +1,10 @@
+/*
+Theme Name: Rigobert Theme
+Description: Thème WordPress vierge avec Tailwind CSS
+Version: 1.0.0
+Author: Votre Nom
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,69 @@
+# WordPress
+wp-config.php
+wp-config-local.php
+wp-content/backup-*
+wp-content/backups/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/languages/
+wp-content/mu-plugins/
+wp-content/plugins/
+wp-content/wp-cache-config.php
+wp-content/plugins/hello.php
+wp-admin/
+wp-includes/
+
+# wp-cli
+wp-cli.local.yml
+
+# Local by Flywheel
+local-xdebuginfo.php
+local-config.php
+local-config-db.php
+.Local/
+Local Sites/
+
+# MAMP
+.htaccess
+*.log
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-*
+*.code-workspace
+
+# Environment variables
+.env
+.env.local
+.env.php
+
+# OS
+Thumbs.db
+
+# This WordPress installation
+wp-*.php
+xmlrpc.php
+license.txt
+readme.html
