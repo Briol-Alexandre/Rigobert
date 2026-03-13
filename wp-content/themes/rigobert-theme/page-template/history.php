@@ -15,7 +15,7 @@ $us_link = get_field('us_link');
         Notre <span class="highlight">histoire</span>
     </h1>
 
-    <div class="text-content col-start-3 col-end-11 mt-10">
+    <div class="text-content col-start-3 col-end-11">
         <?= $content ?>
     </div>
 

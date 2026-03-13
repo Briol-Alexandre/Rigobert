@@ -39,8 +39,8 @@ $facebook = get_field('socials_facebook', 'option');
             </div>
 
             <div class="text-center footer-nav">
-                <h3 class="text-content text-background font-semibold mb-4">Navigation</h3>
-                <nav class="space-y-2 text-lg">
+                <nav aria-labelledby="footer-nav" class="space-y-2 text-lg">
+                    <h3 id="footer-nav" class="text-content text-background font-semibold mb-4">Navigation</h3>
                     <?php
                     wp_nav_menu(array(
                         'theme_location' => 'primary',

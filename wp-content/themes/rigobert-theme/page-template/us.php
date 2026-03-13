@@ -10,7 +10,7 @@ $query = new WP_Query([
 ]);
 ?>
 <main class="mt-section">
-    <h1 class="title mb-section">Notre <span class="highlight">Équipe</span></h1>
+    <h1 class="title">Notre <span class="highlight">Équipe</span></h1>
     <?php
     $i = 0;
     $total = $query->post_count;

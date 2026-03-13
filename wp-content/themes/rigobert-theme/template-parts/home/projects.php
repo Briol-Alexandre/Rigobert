@@ -3,8 +3,6 @@ $title = get_field('home_projects_title');
 $title = strip_tags($title, '<strong><em><span>');
 $title = str_replace(['<strong>', '</strong>'], ['<span class="highlight">', '</span>'], $title);
 
-$projects_link = get_field('projects_link');
-
 
 $query = new WP_Query([
     'post_type' => 'project',
@@ -25,10 +23,10 @@ $query = new WP_Query([
                     $title = get_the_title();
                     $excerpt = get_the_excerpt();
                     $link = get_permalink();
-                    $image = get_field('project_img');
                     ?>
                     <div class="flex-1 aspect-[3/4] relative group">
-                        <img src="<?= $image['url'] ?>" alt="<?= $title ?>" class="absolute w-full h-full object-cover">
+                        <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= $title ?>"
+                            class="absolute w-full h-full object-cover">
                         <div
                             class="absolute bottom-0 left-0 right-0 p-10 bg-black/70 text-background opacity-0 group-hover:opacity-100 h-full transition-all font-cormorant duration-300">
                             <div
@@ -47,6 +45,7 @@ $query = new WP_Query([
                 <p class="col-span-12 text-center text-content">Aucun projet trouvé</p>
             <?php endif; ?>
         </div>
-        <a href="<?= $projects_link ?>" class="btn-primary col-span-12 mx-auto mt-10">Voir tous les projets</a>
+        <a href="<?= get_post_type_archive_link('project') ?>" class="btn-primary col-span-12 mx-auto mt-10">Voir tous
+            les projets</a>
     </div>
 </section>

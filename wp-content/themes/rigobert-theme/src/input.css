@@ -44,15 +44,15 @@
   }
   
   .btn-primary {
-    @apply bg-main text-background text-2xl font-cormorant border border-main px-6 py-2 hover:bg-background hover:text-main transition-all duration-300 w-fit;
+    @apply bg-main text-background text-xl 2xl:text-2xl font-cormorant border border-main px-6 py-2 hover:bg-background hover:text-main transition-all duration-300 w-fit;
   }
   
   .btn-secondary {
-    @apply bg-background text-main text-2xl font-cormorant border border-background px-6 py-2 hover:bg-transparent hover:text-background transition-all duration-300 w-fit;
+    @apply bg-background text-main text-xl 2xl:text-2xl font-cormorant border border-background px-6 py-2 hover:bg-transparent hover:text-background transition-all duration-300 w-fit;
   }
 
   .text-content {
-    @apply text-main text-lg sm:text-xl md:text-2xl font-cormorant;
+    @apply text-main text-xl 2xl:text-2xl font-cormorant;
     p {
       @apply mb-4 sm:mb-6;
     }
@@ -75,15 +75,15 @@
   }
 
   .small_title {
-    @apply text-main text-4.5xl font-forum uppercase;
+    @apply text-main text-4xl 2xl:text-4.5xl font-forum uppercase;
     .highlight {
-      @apply text-5.5xl;
+      @apply text-5xl 2xl:text-5.5xl;
     }
   }
 
   .title {
-  @apply text-main text-4.5xl font-forum uppercase text-center relative
-    flex items-center justify-center gap-4;
+  @apply text-main text-4xl 2xl:text-4.5xl font-forum uppercase text-center relative
+    flex items-center justify-center gap-4 mb-12;
 
   &::before,
   &::after {
@@ -91,7 +91,7 @@
   }
 
   .highlight {
-    @apply text-5.5xl;
+    @apply text-5xl 2xl:text-5.5xl;
   }
 }
 }

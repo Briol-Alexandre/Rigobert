@@ -12,7 +12,7 @@ function register_my_cpt()
         'has_archive' => true,
         'show_in_rest' => true, // active Gutenberg + REST API
         'menu_icon' => 'dashicons-portfolio',
-        'supports' => ['title', 'editor'],
+        'supports' => ['title', 'thumbnail', 'editor'],
         'rewrite' => ['slug' => 'projets'],
     ]);
     register_post_type('review', [
@@ -42,6 +42,20 @@ function register_my_cpt()
         'menu_icon' => 'dashicons-businessman',
         'supports' => ['title', 'thumbnail', 'editor'],
         'rewrite' => ['slug' => 'Équipes'],
+    ]);
+    register_post_type('service', [
+        'labels' => [
+            'name' => 'Services',
+            'singular_name' => 'Service',
+            'add_new_item' => 'Ajouter un service',
+            'edit_item' => 'Modifier le service',
+        ],
+        'public' => true,
+        'has_archive' => true,
+        'show_in_rest' => true, // active Gutenberg + REST API
+        'menu_icon' => 'dashicons-products',
+        'supports' => ['title', 'thumbnail', 'editor'],
+        'rewrite' => ['slug' => 'services'],
     ]);
 
 }

@@ -28,7 +28,7 @@ module.exports = {
         'bg-black',
         'flex',
         'justify-between',
-        'bg-red-500'
+        'bg-red-500',
     ],
     plugins: [],
 }
