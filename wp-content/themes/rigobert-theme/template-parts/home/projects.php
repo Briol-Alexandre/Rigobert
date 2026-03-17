@@ -16,7 +16,7 @@ $query = new WP_Query([
                 <?= $title ?>
             </h2>
         </div>
-        <div class="col-start-2 col-end-12 flex gap-4">
+        <div class="col-start-2 col-end-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-4">
             <?php if ($query->have_posts()): ?>
                 <?php while ($query->have_posts()):
                     $query->the_post();
@@ -24,13 +24,27 @@ $query = new WP_Query([
                     $excerpt = get_the_excerpt();
                     $link = get_permalink();
                     ?>
-                    <div class="flex-1 aspect-[3/4] relative group">
-                        <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= $title ?>"
-                            class="absolute w-full h-full object-cover">
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-10 bg-black/70 text-background opacity-0 group-hover:opacity-100 h-full transition-all font-cormorant duration-300">
+                    <div class="relative group">
+                        <div class="aspect-square relative">
+                            <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= $title ?>"
+                                class="absolute w-full h-full object-cover">
+
                             <div
-                                class="flex flex-col items-center justify-end gap-4 border border-background rounded-tr-full rounded-tl-full h-full px-10 pb-10">
+                                class="absolute bottom-0 left-0 right-0 2xl:p-10 p-3 bg-black/70 text-background opacity-0 lg:group-hover:opacity-100 h-full transition-all font-cormorant duration-300 hidden lg:block">
+                                <div
+                                    class="flex flex-col items-center justify-end gap-4 border border-background rounded-tr-full rounded-tl-full h-full px-7 pb-7 2xl:px-10 2xl:pb-10">
+                                    <h3
+                                        class="font-forum text-2xl 2xl:text-3xl pb-4 border-b border-background w-full text-center">
+                                        <?= $title ?>
+                                    </h3>
+                                    <p class="text-content text-background line-clamp-3 xl:line-clamp-5"><?= $excerpt ?></p>
+                                    <a href="<?= $link ?>" class="btn-secondary">En savoir plus</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:hidden p-6 bg-black/70 text-background font-cormorant">
+                            <div class="flex flex-col items-center gap-4">
                                 <h3 class="font-forum text-3xl pb-4 border-b border-background w-full text-center">
                                     <?= $title ?>
                                 </h3>

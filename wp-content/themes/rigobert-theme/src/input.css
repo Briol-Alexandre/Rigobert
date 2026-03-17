@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+
 @import "./nav/nav.css";
 @tailwind base;
 @tailwind components;
@@ -5,17 +10,14 @@
 
 
 /* Styles personnalisés peuvent être ajoutés ici */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
-
-
 
 @layer base {
   body {
     @apply font-sans antialiased;
   }
+  html, body {
+    overflow-x: hidden;
+}
 }
 
 @layer components {
@@ -52,7 +54,7 @@
   }
 
   .text-content {
-    @apply text-main text-xl 2xl:text-2xl font-cormorant;
+    @apply text-main text-lg lg:text-xl 2xl:text-2xl font-cormorant;
     p {
       @apply mb-4 sm:mb-6;
     }
@@ -71,27 +73,89 @@
   }
 
   section {
-    padding-top: 100px;
+    @apply lg:mt-[100px] mt-14;
   }
 
   .small_title {
-    @apply text-main text-4xl 2xl:text-4.5xl font-forum uppercase;
+    @apply text-main text-3xl lg:text-4xl 2xl:text-4.5xl font-forum uppercase;
     .highlight {
-      @apply text-5xl 2xl:text-5.5xl;
+      @apply text-4xl lg:text-5xl 2xl:text-5.5xl ;
     }
   }
 
   .title {
-  @apply text-main text-4xl 2xl:text-4.5xl font-forum uppercase text-center relative
+  @apply text-main text-3xl lg:text-4xl 2xl:text-4.5xl font-forum uppercase text-center relative
     flex items-center justify-center gap-4 mb-12;
 
   &::before,
   &::after {
-    @apply content-[''] block w-24 h-px bg-main;
+    @apply content-[''] block w-12 md:w-24 h-px bg-main;
   }
 
   .highlight {
-    @apply text-5xl 2xl:text-5.5xl;
+    @apply text-4xl lg:text-5xl 2xl:text-5.5xl -ml-4;
   }
-}
+  }
+
+  /* Contact Form 7 Styles */
+  .cf7-wrapper {
+    @apply space-y-6;
+
+    .wpcf7-form-control {
+      @apply w-full;
+    }
+
+    .wpcf7-form-control-wrap {
+      @apply block w-full;
+    }
+
+    label {
+      @apply block text-main font-cormorant text-lg 2xl:text-xl mb-3 font-medium;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    textarea,
+    select {
+      @apply w-full px-4 py-3 border border-main bg-transparent text-main font-cormorant text-lg placeholder-main/50 focus:outline-none focus:ring-2 focus:ring-main focus:ring-offset-2 focus:ring-offset-background transition-all;
+    }
+
+    textarea {
+      @apply resize-none;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      @apply text-main/50;
+    }
+
+    .wpcf7-submit {
+      @apply bg-main text-background text-xl 2xl:text-2xl font-cormorant border border-main px-6 py-2 hover:bg-background hover:text-main transition-all duration-300 cursor-pointer mt-8 w-fit ml-auto block;
+    }
+
+    .wpcf7-validation-errors {
+      @apply border border-red-500 bg-red-50 text-red-700 p-4 rounded mb-6;
+    }
+
+    .wpcf7-mail-sent-ok {
+      @apply border border-green-500 bg-green-50 text-green-700 p-4 rounded mb-6;
+    }
+    .wpcf7-response-output {
+      @apply mt-4 text-center font-cormorant text-lg 2xl:text-xl !border-main border p-4;
+    }
+
+    .wpcf7-form-control.has-error {
+      input,
+      textarea,
+      select {
+        @apply bg-background;
+      }
+    }
+
+    .wpcf7-form-control span.wpcf7-not-valid-tip {
+      @apply text-red-500 text-sm mt-1 block font-cormorant;
+    }
+  }
 }

@@ -1,20 +1,59 @@
 const header = document.getElementById("site-header");
 
-if (header && document.body.classList.contains("home")) {
-    const heroHeight = window.innerHeight;
+if (header) {
+    const isFrontPage = header.getAttribute("data-is-front-page") === "true";
 
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > heroHeight - 200) {
-            header.classList.remove("bg-transparent", "text-background");
-            header.classList.add("bg-white", "text-main");
-        } else {
-            header.classList.add("bg-transparent", "text-background");
-            header.classList.remove("bg-white", "text-main");
+    // Only apply scroll effect on front page
+    if (isFrontPage) {
+        const heroHeight = window.innerHeight;
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > heroHeight - 200) {
+                header.classList.remove("bg-transparent", "text-background");
+                header.classList.add("bg-white", "text-main");
+            } else {
+                header.classList.add("bg-transparent", "text-background");
+                header.classList.remove("bg-white", "text-main");
+            }
+        });
+    }
+}
+const burgerBtn = document.getElementById("burger-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+
+if (burgerBtn && mobileMenu) {
+    const openMenu = () => {
+        burgerBtn.classList.add("is-open");
+        burgerBtn.setAttribute("aria-expanded", "true");
+        burgerBtn.setAttribute("aria-label", "Fermer le menu");
+        mobileMenu.classList.add("is-open");
+        mobileMenu.setAttribute("aria-hidden", "false");
+        document.body.classList.add("overflow-hidden");
+    };
+
+    const closeMenu = () => {
+        burgerBtn.classList.remove("is-open");
+        burgerBtn.setAttribute("aria-expanded", "false");
+        burgerBtn.setAttribute("aria-label", "Ouvrir le menu");
+        mobileMenu.classList.remove("is-open");
+        mobileMenu.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("overflow-hidden");
+    };
+
+    burgerBtn.addEventListener("click", () => {
+        burgerBtn.classList.contains("is-open") ? closeMenu() : openMenu();
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && burgerBtn.classList.contains("is-open")) {
+            closeMenu();
         }
     });
-}
 
-// Lightbox gallery
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+    });
+}
 document.addEventListener("DOMContentLoaded", function () {
     const galleryLinks = document.querySelectorAll(".gallery-image");
 

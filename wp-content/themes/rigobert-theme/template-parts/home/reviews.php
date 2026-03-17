@@ -7,7 +7,7 @@ $query = new WP_Query([
 
 <section aria-labelledby="reviews" class="grid-main">
     <h2 id="reviews" class="title col-span-12">Avis</h2>
-    <div class="col-start-2 col-end-12 flex gap-4">
+    <div class="col-start-2 col-end-12 grid grid-cols-1 md:grid-cols-3 gap-4">
         <?php if ($query->have_posts()): ?>
             <?php while ($query->have_posts()):
                 $query->the_post();

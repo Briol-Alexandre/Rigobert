@@ -11,14 +11,14 @@ $link = get_field('history_link');
 ?>
 
 <section class="grid-main" aria-label="histoire">
-    <div class="col-start-2 col-end-5 flex flex-col gap-6">
+    <div class=" col-start-2 col-end-12 row-start-1 lg:col-start-2 lg:col-end-5 flex flex-col gap-6">
         <h2 id="histoire" class="small_title"><?= $title ?></h2>
         <p class="text-content text-justify"><?= $description ?></p>
-        <a href="<?= $link['url'] ?>" class="btn-primary">
+        <a href="<?= $link['url'] ?>" class="btn-primary max-lg:hidden">
             <?= $link['title'] ?>
         </a>
     </div>
-    <div class="col-start-6 col-end-11">
+    <div class=" col-start-2 col-end-12 sm:col-end-10 max-lg:row-start-2 lg:col-start-6 lg:col-end-11">
         <a href="<?= $images[0]['url'] ?>"
             class="gallery-image w-full cursor-pointer block h-full overflow-hidden group relative">
             <span
@@ -28,10 +28,11 @@ $link = get_field('history_link');
                 class="h-full object-cover hover:scale-105 transition-transform">
         </a>
     </div>
-    <div class="col-start-11 col-end-12 flex flex-col gap-4">
+    <div
+        class="sm:col-start-10 col-start-2 max-sm:grid max-sm:grid-cols-2 col-end-12 lg:col-start-11 lg:col-end-12 flex flex-col gap-4">
         <?php for ($i = 1; $i < count($images); $i++) { ?>
             <a href="<?= $images[$i]['url'] ?>"
-                class="gallery-image w-full cursor-pointer block h-1/2 overflow-hidden group relative">
+                class="gallery-image w-full cursor-pointer block sm:h-1/2 overflow-hidden group relative">
                 <span
                     class="opacity-0 group-hover:opacity-100 absolute w-full h-full bg-black/50 flex items-center justify-center transition-all duration-300 font-cormorant text-background text-2xl font-bold text-center">Voir
                     l'image</span>
@@ -40,4 +41,7 @@ $link = get_field('history_link');
             </a>
         <?php } ?>
     </div>
+    <a href="<?= $link['url'] ?>" class="btn-primary lg:hidden col-span-full justify-self-center mt-6">
+        <?= $link['title'] ?>
+    </a>
 </section>

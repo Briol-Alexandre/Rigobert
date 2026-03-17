@@ -13,6 +13,10 @@ module.exports = {
             },
             fontFamily: {
                 sans: ['Inter', 'system-ui', 'sans-serif'],
+                cormorant: ['Cormorant', 'serif'],
+                forum: ['Forum', 'cursive'],
+                windsong: ['WindSong', 'cursive'],
+                bodoni: ['Bodoni Moda', 'serif'],
             },
             fontSize: {
                 '4.5xl': '2.625rem',

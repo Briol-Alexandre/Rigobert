@@ -1,15 +1,91 @@
 .main-menu {
-    @apply py-7;
-    ul{
+    @apply py-16 flex items-center justify-between relative;
+
+    ul {
         @apply flex justify-between items-center uppercase font-cormorant text-lg 2xl:text-xl;
 
-        .logo-link{
+        .logo-link {
             @apply bg-[url("../img/logo-wood.svg")] bg-contain bg-no-repeat w-20 h-20 text-transparent;
         }
     }
+
+
+    .logo-center {
+        @apply absolute left-1/2 -translate-x-1/2 bg-[url("../img/logo-wood.svg")] bg-contain bg-center bg-no-repeat w-20 h-20 text-transparent z-[9999];
+    }
+
+
+    .menu-links {
+        @apply w-full;
+
+        ul {
+            @apply flex justify-between items-center uppercase font-cormorant text-lg 2xl:text-xl;
+
+        
+            .logo-link {
+                @apply hidden;
+            }
+        }
+    }
+
+
+    #burger-btn {
+        @apply hidden;
+    }
 }
+
+#mobile-menu {
+    @apply hidden fixed inset-0 z-40 flex-col items-center justify-center bg-background;
+
+    &.is-open {
+        @apply flex;
+    }
+
+    ul {
+        @apply flex flex-col items-center gap-8 uppercase font-cormorant text-2xl text-main;
+
+        .logo-link {
+            @apply hidden;
+        }
+    }
+}
+
 .footer-nav {
-    .logo-link{
-        @apply hidden
+    .logo-link {
+        @apply hidden;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main-menu {
+        .menu-links {
+            @apply hidden;
+        }
+
+    
+        #burger-btn {
+            @apply flex flex-col justify-center items-end gap-[5px] w-8 h-8 ml-auto z-50 relative;
+
+            span {
+                @apply block h-[2px] bg-current transition-all duration-300 rounded;
+
+                &:nth-child(1) { @apply w-8; }
+                &:nth-child(2) { @apply w-5; }
+                &:nth-child(3) { @apply w-8; }
+            }
+
+        
+            &.is-open {
+                span:nth-child(1) {
+                    @apply w-8 translate-y-[7px] rotate-45 bg-main;
+                }
+                span:nth-child(2) {
+                    @apply opacity-0 w-0 bg-main;
+                }
+                span:nth-child(3) {
+                    @apply w-8 -translate-y-[7px] -rotate-45 bg-main;
+                }
+            }
+        }
     }
 }
