@@ -6,12 +6,12 @@ $facebook = get_field('socials_facebook', 'option');
 
 ?>
 
-<footer class=" text-white mt-[100px] relative font-cormorant text-content">
+<footer class=" text-white lg:mt-section mt-12 relative font-cormorant text-content">
     <img src="<?= get_template_directory_uri() ?>/img/footer_bg.png" alt="Logo"
         class="absolute top-0 left-0 w-full h-full -z-10">
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-lg">
+            <div class="text-lg max-md:flex max-md:flex-col items-center">
                 <img src="<?= get_template_directory_uri() ?>/img/logo_footer.svg" alt="Logo de Rigobert">
                 <h3 class="sr-only">
                     <?php bloginfo('name'); ?>
@@ -52,7 +52,7 @@ $facebook = get_field('socials_facebook', 'option');
                 </nav>
             </div>
 
-            <div class="text-right flex flex-col gap-2">
+            <div class="text-right flex flex-col max-md:items-center gap-2">
                 <h3 class="text-content text-background font-semibold">Nos réseaux</h3>
                 <div class="flex items-end justify-end gap-4">
                     <a href="<?= $instagram ?>" target="_blank"
@@ -86,7 +86,15 @@ $facebook = get_field('socials_facebook', 'option');
                     Tous droits réservés.
                 </p>
             </div>
+
         </div>
+    </div>
+    <div class="w-full bg-black">
+        <p class="text-white text-base p-4 !m-0 flex justify-end gap-2">
+            Conçu et développé par <img src="<?= get_template_directory_uri() ?>/img/AB-logo.svg"
+                alt="Logo de Alexandre Briol" class="inline-block w-5 h-5"> <a href="https://alexandrebriol.com"
+                target="_blank" class="underline hover:text-gray-400 transition-colors">Alexandre Briol</a>
+        </p>
     </div>
 </footer>
 

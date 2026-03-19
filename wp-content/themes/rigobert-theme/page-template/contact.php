@@ -5,7 +5,7 @@ get_header();
 ?>
 
 <main class="grid-main">
-    <h1 class="title mt-section col-span-12 text-center">
+    <h1 class="title lg:mt-section mt-12 col-span-12 text-center">
         Contactez-<span class="highlight">nous</span>
     </h1>
 

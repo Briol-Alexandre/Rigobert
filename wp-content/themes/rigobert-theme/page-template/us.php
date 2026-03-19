@@ -9,7 +9,7 @@ $query = new WP_Query([
     'posts_per_page' => -1,
 ]);
 ?>
-<main class="mt-section">
+<main class="lg:mt-section mt-12">
     <h1 class="title">Notre&nbsp; <span class="highlight">Équipe</span></h1>
     <?php
     $i = 0;
@@ -25,7 +25,7 @@ $query = new WP_Query([
         $i++;
         ?>
         <section aria-labelledby="<?= $clean_title ?>"
-            class="group team-member relative text-content grid-main items-center py-16 first:mt-section mt-0">
+            class="group team-member relative text-content grid-main items-center py-16 first:lg:mt-section mt-0">
             <img src="<?= get_template_directory_uri() ?>/img/bg_whool.png"
                 class="absolute w-full h-full -z-10 <?= $show_bg ? 'block' : 'hidden' ?>">
             <div

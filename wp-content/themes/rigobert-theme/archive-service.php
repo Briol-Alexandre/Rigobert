@@ -9,16 +9,17 @@ $services = new WP_Query([
 ]);
 ?>
 <main class="grid-main">
-    <h1 class="col-span-full text-center title mt-section">Nos&nbsp; <span class="highlight">services</span></h1>
+    <h1 class="col-span-full text-center title lg:mt-section mt-12">Nos&nbsp; <span class="highlight">services</span>
+    </h1>
 
-    <div class="col-start-2 col-end-12 grid grid-cols-3 gap-4">
+    <div class="col-start-2 col-end-12 grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
         <?php if ($services->have_posts()): ?>
             <?php while ($services->have_posts()):
                 $services->the_post(); ?>
                 <article class="relative">
                     <a href="<?= get_the_permalink() ?>" class="absolute top-0 left-0 w-full h-full"></a>
                     <div class="rounded-t-full overflow-hidden">
-                        <?php the_post_thumbnail() ?>
+                        <img src="<?php the_post_thumbnail_url() ?>" alt="<?php the_post_thumbnail_caption() ?>" class="w-full">
                     </div>
                     <div class="p-5"
                         style="background-image: url('<?= get_template_directory_uri() ?>/img/bg_whool.png'); background-size: cover; background-position: center;">
