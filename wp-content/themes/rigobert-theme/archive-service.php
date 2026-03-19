@@ -9,7 +9,7 @@ $services = new WP_Query([
 ]);
 ?>
 <main class="grid-main">
-    <h1 class="col-span-full text-center title mt-section">Nos <span class="highlight">services</span></h1>
+    <h1 class="col-span-full text-center title mt-section">Nos&nbsp; <span class="highlight">services</span></h1>
 
     <div class="col-start-2 col-end-12 grid grid-cols-3 gap-4">
         <?php if ($services->have_posts()): ?>

@@ -1031,6 +1031,40 @@ html, body {
   }
 }
 
+.team-member-content {
+  font-family: 'Cormorant', serif;
+  font-family: Cormorant, serif;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(93 83 76 / var(--tw-text-opacity, 1));
+}
+
+@media (min-width: 1024px){
+  .team-member-content{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1536px){
+  .team-member-content{
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.team-member-content {
+  p{
+    margin-bottom: 0px;
+  }
+  @media (min-width: 1024px){
+    p{
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
 .gallery-image{
   width: 100%;
 }
@@ -1697,6 +1731,10 @@ section{
   grid-column-end: 5;
 }
 
+.row-span-1{
+  grid-row: span 1 / span 1;
+}
+
 .row-span-2{
   grid-row: span 2 / span 2;
 }
@@ -1750,8 +1788,16 @@ section{
   margin-left: 1.5rem;
 }
 
+.mt-0{
+  margin-top: 0px;
+}
+
 .mt-10{
   margin-top: 2.5rem;
+}
+
+.mt-20{
+  margin-top: 5rem;
 }
 
 .mt-4{
@@ -2154,8 +2200,9 @@ section{
   line-height: 2.25rem;
 }
 
-.text-5\.5xl{
-  font-size: 3.25rem;
+.text-4xl{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-base{
@@ -2179,6 +2226,10 @@ section{
 
 .font-semibold{
   font-weight: 600;
+}
+
+.leading-normal{
+  line-height: 1.5;
 }
 
 .text-background{
@@ -2254,15 +2305,19 @@ section{
   transition-duration: 300ms;
 }
 
-.\[grid-template-columns\:repeat\(4\2c 170px\)\]{
-  grid-template-columns: repeat(4,170px);
+.\[grid-template-columns\:repeat\(4\2c 102px\)\]{
+  grid-template-columns: repeat(4,102px);
 }
 
-.\[grid-template-rows\:repeat\(4\2c 160px\)\]{
-  grid-template-rows: repeat(4,160px);
+.\[grid-template-rows\:repeat\(4\2c 96px\)\]{
+  grid-template-rows: repeat(4,96px);
 }
 
 /* Styles personnalisés peuvent être ajoutés ici */
+
+.first\:mt-section:first-child{
+  margin-top: 6.25rem;
+}
 
 .hover\:scale-105:hover{
   --tw-scale-x: 1.05;
@@ -2277,38 +2332,6 @@ section{
 .hover\:text-gray-400:hover{
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity, 1));
-}
-
-.group:nth-child(odd) .group-odd\:col-start-2{
-  grid-column-start: 2;
-}
-
-.group:nth-child(odd) .group-odd\:col-start-7{
-  grid-column-start: 7;
-}
-
-.group:nth-child(odd) .group-odd\:col-end-12{
-  grid-column-end: 12;
-}
-
-.group:nth-child(odd) .group-odd\:col-end-6{
-  grid-column-end: 6;
-}
-
-.group:nth-child(even) .group-even\:col-start-2{
-  grid-column-start: 2;
-}
-
-.group:nth-child(even) .group-even\:col-start-7{
-  grid-column-start: 7;
-}
-
-.group:nth-child(even) .group-even\:col-end-12{
-  grid-column-end: 12;
-}
-
-.group:nth-child(even) .group-even\:col-end-6{
-  grid-column-end: 6;
 }
 
 .group:hover .group-hover\:opacity-100{
@@ -2408,6 +2431,14 @@ section{
     grid-column-end: 5;
   }
 
+  .lg\:row-start-1{
+    grid-row-start: 1;
+  }
+
+  .lg\:row-end-2{
+    grid-row-end: 2;
+  }
+
   .lg\:block{
     display: block;
   }
@@ -2422,6 +2453,38 @@ section{
 
   .lg\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .group:nth-child(odd) .lg\:group-odd\:col-start-2{
+    grid-column-start: 2;
+  }
+
+  .group:nth-child(odd) .lg\:group-odd\:col-start-8{
+    grid-column-start: 8;
+  }
+
+  .group:nth-child(odd) .lg\:group-odd\:col-end-12{
+    grid-column-end: 12;
+  }
+
+  .group:nth-child(odd) .lg\:group-odd\:col-end-6{
+    grid-column-end: 6;
+  }
+
+  .group:nth-child(even) .lg\:group-even\:col-start-2{
+    grid-column-start: 2;
+  }
+
+  .group:nth-child(even) .lg\:group-even\:col-start-7{
+    grid-column-start: 7;
+  }
+
+  .group:nth-child(even) .lg\:group-even\:col-end-12{
+    grid-column-end: 12;
+  }
+
+  .group:nth-child(even) .lg\:group-even\:col-end-6{
+    grid-column-end: 6;
   }
 
   .group:hover .lg\:group-hover\:opacity-100{
@@ -2443,6 +2506,34 @@ section{
 
   .xl\:hidden{
     display: none;
+  }
+
+  .xl\:text-5\.5xl{
+    font-size: 3.25rem;
+  }
+
+  .xl\:\[grid-template-columns\:repeat\(4\2c 153px\)\]{
+    grid-template-columns: repeat(4,153px);
+  }
+
+  .xl\:\[grid-template-rows\:repeat\(4\2c 144px\)\]{
+    grid-template-rows: repeat(4,144px);
+  }
+
+  .group:nth-child(odd) .xl\:group-odd\:col-start-8{
+    grid-column-start: 8;
+  }
+
+  .group:nth-child(odd) .xl\:group-odd\:col-end-7{
+    grid-column-end: 7;
+  }
+
+  .group:nth-child(even) .xl\:group-even\:col-start-7{
+    grid-column-start: 7;
+  }
+
+  .group:nth-child(even) .xl\:group-even\:col-end-6{
+    grid-column-end: 6;
   }
 }
 

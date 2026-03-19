@@ -60,6 +60,13 @@
     }
   }
 
+  .team-member-content {
+    @apply text-content;
+    p {
+      @apply mb-0 lg:mb-6;
+    }
+  }
+
   .content-container {
     @apply col-span-12 sm:col-start-2 sm:col-end-12 md:col-start-3 md:col-end-11;
   }

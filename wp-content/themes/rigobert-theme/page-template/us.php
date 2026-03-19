@@ -10,7 +10,7 @@ $query = new WP_Query([
 ]);
 ?>
 <main class="mt-section">
-    <h1 class="title">Notre <span class="highlight">Équipe</span></h1>
+    <h1 class="title">Notre&nbsp; <span class="highlight">Équipe</span></h1>
     <?php
     $i = 0;
     $total = $query->post_count;
@@ -25,20 +25,22 @@ $query = new WP_Query([
         $i++;
         ?>
         <section aria-labelledby="<?= $clean_title ?>"
-            class="group team-member relative text-content grid-main items-center py-16">
+            class="group team-member relative text-content grid-main items-center py-16 first:mt-section mt-0">
             <img src="<?= get_template_directory_uri() ?>/img/bg_whool.png"
                 class="absolute w-full h-full -z-10 <?= $show_bg ? 'block' : 'hidden' ?>">
             <div
-                class="group-even:col-start-2 group-even:col-end-6 group-odd:col-start-7 group-odd:col-end-12 row-start-1 row-end-2">
-                <h2 class="font-windsong text-black text-5.5xl mb-6" id="<?= $clean_title ?>">
+                class="lg:group-even:col-start-2 xl:group-even:col-end-6 lg:group-even:col-end-6 xl:group-odd:col-start-8 lg:group-odd:col-start-8 lg:group-odd:col-end-12 col-start-2 col-end-12 row-start-1 row-end-2 md:mt-20">
+                <h2 class="font-windsong text-black text-4xl xl:text-5.5xl mb-6 leading-normal" id="<?= $clean_title ?>">
                     <?php the_title(); ?>
                 </h2>
                 <div class="team-member-content text-justify">
                     <?php the_content(); ?>
                 </div>
             </div>
-            <div
-                class="group-even:col-start-7 group-even:col-end-12 group-odd:col-start-2 group-odd:col-end-6 row-start-1 row-end-2 grid [grid-template-columns:repeat(4,170px)] [grid-template-rows:repeat(4,160px)] gap-2">
+            <div class="xl:group-even:col-start-7 col-start-2 col-end-12 lg:group-even:col-start-7 lg:group-even:col-end-12 lg:group-odd:col-start-2 xl:group-odd:col-end-7 lg:group-odd:col-end-6 lg:row-start-1 lg:row-end-2 row-start-2 row-span-1 mx-auto grid gap-2
+                [grid-template-columns:repeat(4,38px)] [grid-template-rows:repeat(4,36px)]
+                sm:[grid-template-columns:repeat(4,102px)] sm:[grid-template-rows:repeat(4,96px)]
+                xl:[grid-template-columns:repeat(4,153px)] xl:[grid-template-rows:repeat(4,144px)] ">
                 <?php if (has_post_thumbnail()): ?>
                     <span class="col-start-2 col-end-4 row-start-2 row-end-4">
                         <?php the_post_thumbnail('large', ['class' => 'w-full h-auto object-cover w-full h-full']); ?>
